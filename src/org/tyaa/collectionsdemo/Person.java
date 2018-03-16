@@ -16,19 +16,22 @@ public class Person<T> {
     public T salary;
     
     private static int count;
+    static Person<Integer> pers= new Person();
     //step2: static var
     
     static{
-    
         count = 0;
     }
     
     //step1: private
-    public Person(){
+    private Person(){
         count++;
     }
     
     //step3: static method getInstance()
+    public static Person getInstance(){
+        return pers;
+    }
     
     public static int size(){
     
@@ -43,5 +46,6 @@ public class Person<T> {
     protected void finalize() throws Throwable {
         super.finalize();
         count--;
-    }
+    /*public void create()
+    }*/
 }
